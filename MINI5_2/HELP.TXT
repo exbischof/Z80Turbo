@@ -1,0 +1,63 @@
+ Hilfstext zum Z80-Mini Betriebssystem 04.01 (c) 07.06.1997
+
+ Befehl                     Funktion
+ ---------------------------------------------------------------------------
+ ALLOC <Bytes>              Speicher reservieren
+ AUTO <Adresse>             Autostart-Programm installieren
+			    <Adresse> = 0 fÅr aufheben
+ B <Adresse>                Breakpoint setzen ( 0 fÅr Breakpoint lîschen )
+ BAUD <Baudrate>            RS232 Baudrate einstellen ( z.B. BAUD &19200 )
+ BEFEHLE                    Liste aller vorhandenen Befehle
+ C [<Adresse>]              Unterprogramm-Aufruf
+ CLS                        Bildschirm lîschen
+ CHKS <von> [<bis>] [<st>]  Checksumme von Speicherbereich berechnen,
+			    Startwert <st>
+ D [<von>] [<bis>]          Speicherinhalt in HEX und ASCII ausgeben
+ DEL <Variable>             Variable lîschen
+ E [<Adresse>]              Speicherinhalt verÑndern
+ ECHO                       empfangene Zeichen zurÅcksenden
+ F <von> [<bis>] [<Byte>]   Speicher fÅllen
+ FREE <Adresse>             Speicher freigeben
+ G [<Adresse>]              Programm starten
+ H                          Hilfe
+ HEXDUMP                    empfangene Zeichen im HEX-Code zurÅcksenden
+ I [<I/O>] [<n>]            <n> Eingaben von I/O-Adresse
+ L                          Intel-Hex-Datei laden¿N
+ L <von> [<bis>]            Intel-Hex-Datei in den angegebene Bereich laden
+ LOAD <Speichergrîsse>      Speicher reservieren und laden
+ M <von> [<bis>] <nach>     Speicherinhalt verschieben
+ MEM                        öbersicht des belegten und freien Speichers
+ O [<I/O>] <Byte> [...]     Ausgabe(n) an I/O-Adresse
+ P <von> [<bis>]            Intel-Hex-Datei ausgeben
+ PAGE <Seite>               Speicherseitenumschaltung bei Z80-MINI 3
+ POP                        Wert vom User-Stack hohlen
+ PRN <Wert>                 Wert ausgeben
+ PUSH <Wert>                Wert auf User-Stack ablegen
+ Q [<Adresse>]              Betriebssystem verlassen, Sprung an <Adresse>
+ R [<Reg> <Wert>]           Registerinhalt anzeigen bzw. Ñndern
+ RCLR                       Stack und alle User-Register lîschen
+ S [<Adresse>]              Einzelschritt ohne Unterprogramm
+ SET <Variable> <Wert>      Variable definieren
+ SHRINK <Adresse> <Grîsse>  Speicherbereich verkleinern
+ T [<Adresse>]              Einzelschritt mit Unterprogramm
+ U [<Adresse>]              ProgrammausfÅhrung bis RET-Anweisung
+ UNDO                       letzte User-Register-Inhalte zurÅckholen
+			    Der Stack wird nicht wiederhergestellt.
+ V                          Informationen zum Programm ausgeben
+ VAR                        Variabelenliste ausgeben
+ W <Adresse>                Datenbreich beim debugen beobachten
+ WATCHDOG <0 oder 1>        Watchdog freigeben oder sperren
+ @                          tue nichts
+ ?                          Hilfe¿N
+
+ - Parameter in [ ] sind optional.
+ - Eingabefelder kînnen durch Kommata getrennt werden.
+ - Werteingaben: bin %, dez &, hex $ ( z.B. %10101010, &170, $aa )
+ - Werteingaben in ASCI z.B. mit 'A oder 'A'
+ - Variabelenabfrage beginnen mit * ( z.B. prn *dudei )
+ - Control-C unterbricht das laufende Programm.
+ - Der Optcode $FF ( Rst $38 ) ruft den Monitor auf.
+ - Bei Z80-MINI 3 wird beim Reset die Seite 1 ausgewÑhlt.
+ - Die CPU arbeitet im Interrupt-Mode 2.
+ - RS-232 Einstellung: 38400 Baud, 8 Datenbits, 1 Stopbit, keine ParitÑt
+

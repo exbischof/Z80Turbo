@@ -1,0 +1,84 @@
+
+=================================
+        Z80 Emuf Projekt
+=================================
+
+nderungen von Version MINI3_2A.Q nach MINI3_2B.ASM
+
+- Der Quelltext wurde von ASS_V9 auf TASM-Assembler umgeschrieben.
+
+- Der erzeugte Code ist mit der Aussgabe von ASS_V9 identisch.
+
+
+nderungen in der Version MINI4_0.ASM
+
+
+- Der Hilfstext und Cheksumme werde in das Assemblerprogramm eingebunden
+
+- Wenn das Makro EPROM defienier ist wird das Programm frs Brennen 
+  in das EPROM bersetzt.
+
+- Es werden diverse Betriebssystemaufrufe via RST 08 untersttzt.
+
+- Die Komunikation ist auch bei verhindertem Interrupt via Polling m”glich.
+  Dadurch entf„llt Notaux_init.
+
+- Betriebssystemaufrufe werde bei Step over ( Befhle s ) in einem schritt
+  ausgefhrt.
+
+- Der Zustand des IFF2 wird angezeigt.
+
+- Es kann eine Default-Startadresse definiert werde. Bei RLCR wird PC auf
+  diese Adresse gesetzt.
+
+- Beim Hardwaretest wir die Baterie berprft.
+
+- Der Watchdog-Timer wird deaktiviert.
+
+- Eine Funktion zur Division mit Rest ist vorhanden
+
+- Bei IN Befehl wird das Byte zus„tzlich im Dezimalsystem und als ASCII
+  ausgegeben.
+
+- Bei Eingabe von ASCII-Werten kann dem ASCII-Zeichen ein ' folgen.
+
+- Bei Userbreak un Breakpoint wird die Zeile hinter der Standartmeldung 
+  gel”scht.
+
+- Bei dem V-Befehle wir der Stack und der Systemspeicher getrennt angezeigt.
+
+- Der Stack belegt 512 Byte
+
+- Die Baudrate betr„gt 38400.
+
+
+nderungen in der Version MINI4_1.ASM
+
+- An Addresse $0083 ist 'M' als Erkennungszeichen gespeichert.
+- An Addresse $0084 ist die Versionsnummer gespeichert.
+- An Addresse $0086 steht der Zeiger auf die Tabbele der
+  Hardwaresprungaddresen.
+- An Addresse $0088 steht ein Zeiger auf die Autostart-Variablen.
+
+- Programme k”nnen reloziert werden.
+
+- Der Befehl "L" erm”glicht das Laden an beliebige Adressen.
+
+- Bei falscher Betriebssytemversion wird kein Guru sondern eine Meldung
+  ausgegeben.
+
+- Die Baudrate kann in Klartext angegeben werden.
+
+- Es sind Rutienen un User-Befehle zur Speicherverwaltung vorhanden.
+
+- der Befehl "LOAD" zum reseverviern von Speicher und laden von Programmen
+  wurde implementiert.
+
+- Die Autostartrutiene wird als Unterprogramm ausgefhrt.
+
+- Es kann ein  Breakpoint gesetzt werden.
+
+- der Befehl "W" zum beobachten von Speicherbereichen wurde implementiert.
+
+- Die LCD-Anzeige wird initialisiert.
+
